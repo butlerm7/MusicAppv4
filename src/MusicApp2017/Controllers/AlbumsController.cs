@@ -23,7 +23,7 @@ namespace MusicApp2017.Controllers
             _userManager = userManager;
         }
 
-        // GET: Albums
+
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
@@ -61,7 +61,7 @@ namespace MusicApp2017.Controllers
             return NotFound(currentUser);
         }
 
-        // GET: Albums/Details/5
+
         [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
@@ -139,7 +139,6 @@ namespace MusicApp2017.Controllers
             return View(rating);
         }
 
-        // GET: Albums/Create
         public IActionResult Create()
         {
             ViewData["ArtistID"] = new SelectList(_context.Artists, "ArtistID", "Name");
@@ -147,9 +146,6 @@ namespace MusicApp2017.Controllers
             return View();
         }
 
-        // POST: Albums/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AlbumID,Title,ArtistID,GenreID,")] Album album)
@@ -165,7 +161,6 @@ namespace MusicApp2017.Controllers
             return View(album);
         }
 
-        // GET: Albums/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -183,9 +178,6 @@ namespace MusicApp2017.Controllers
             return View(album);
         }
 
-        // POST: Albums/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AlbumID,Title,ArtistID,GenreID")] Album album)
@@ -220,7 +212,7 @@ namespace MusicApp2017.Controllers
             return View(album);
         }
 
-        // GET: Albums/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -240,7 +232,7 @@ namespace MusicApp2017.Controllers
             return View(album);
         }
 
-        // POST: Albums/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
