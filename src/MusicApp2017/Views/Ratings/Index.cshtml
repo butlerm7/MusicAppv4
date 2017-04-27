@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MusicApp2017.Models.Rating>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stars)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlbumID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stars)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.RatingID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RatingID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RatingID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

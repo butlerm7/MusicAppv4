@@ -1,0 +1,41 @@
+﻿@model MusicApp2017.Models.Rating
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Rating</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="RatingID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlbumID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Stars)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Stars)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
