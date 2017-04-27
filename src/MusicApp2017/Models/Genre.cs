@@ -9,6 +9,6 @@ namespace MusicApp2017.Models
         [Required(ErrorMessage = "Name is required")]
         [StringLength(20, ErrorMessage = "Genre name cannot be more than 20 characters")]
         public string Name { get; set; }
-        //public List<Album> Albums { get; set; }
+
     }
 }
